@@ -1,0 +1,145 @@
+body {
+  box-sizing: border-box;
+  background-color: #E0FFFF;
+  font-family: "Staatliches", cursive;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.wrapper {
+  background-color: #B0C4DE;
+  width: 1500px;
+  margin: 30px auto;
+  padding: 50px;
+  box-shadow: 31px 20px 59px 12px rgba(0, 0, 0, 0.82);
+}
+
+h1 {
+  font-family: "Shadows Into Light", cursive;
+  color: #8B0000;
+  text-align: center;
+  font-size: 40px;
+}
+
+.progress-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #228B22;
+}
+
+.undone {
+  color: #FF4500;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.skills-bar-container {
+  position: relative;
+  width: 40%;
+  min-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  list-style: none;
+}
+.skills-bar-container li {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.skills-bar-container li .progressbar-title {
+  color: #bf3a2b;
+  font-size: 25px;
+}
+.skills-bar-container li .progressbar-title h3 {
+  display: inline-block;
+}
+.skills-bar-container li .progressbar-title .percent {
+  position: absolute;
+  right: 5px;
+}
+.skills-bar-container li .bar-container {
+  background: #555;
+  position: relative;
+  width: 100%;
+  height: 5px;
+  margin-top: 5px;
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+.skills-bar-container li .bar-container .progressbar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.skills-bar-container li .bar-container #progress-html {
+  -webkit-animation-name: progress-html;
+  animation-name: progress-html;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+
+.progressred {
+  background-color: #bf3a2b;
+}
+
+.progressblue {
+  background-color: #1199ff;
+}
+
+.progresspurple {
+  background-color: #9b59b6;
+}
+
+.progressorange {
+  background-color: #ffa500;
+}
+
+.progressgreen {
+  background-color: #27ae60;
+}
+
+
+@keyframes progress-html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 0%;
+  }
+}
