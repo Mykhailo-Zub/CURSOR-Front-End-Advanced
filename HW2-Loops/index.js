@@ -17,7 +17,7 @@ let x = 0;
 
 if (n <= m) {
     for (x = n; x <= m; x++) {
-        if (skipEven === true) {
+        if (skipEven) {
             if (x % 2 === 0) {
                 sum = sum;  
             }
@@ -28,7 +28,7 @@ if (n <= m) {
  
 } else 
     for (x = m; x <= n; x++) {
-        if (skipEven === true) {
+        if (skipEven) {
             if (x % 2 === 0) {
                 sum = sum;  
             }
