@@ -1,45 +1,38 @@
-let n = '';
+let firstInt;
 
 do {
-        n = parseInt(prompt(`Enter a first integer`));
-}   while (!Number.isInteger(n));
+    firstInt = parseInt(prompt(`Enter a first integer`));
+}   while (!Number.isInteger(firstInt));
 
-let m = '';
+let secondInt;
 
 do {
-        m = parseInt(prompt(`Enter a second integer`));
-}   while (!Number.isInteger(m));
+    secondInt = parseInt(prompt(`Enter a second integer`));
+}   while (!Number.isInteger(secondInt));
 
 const skipEven = confirm('Skip even numbers?');
 
 let sum = 0;
 let x = 0;
 
-if (n <= m) {
-    for (x = n; x <= m; x++) {
-        if (skipEven) {
-            if (x % 2 === 0) {
-                sum = sum;  
+if (firstInt <= secondInt) {
+    for (x = firstInt; x <= secondInt; x++) {
+        if (skipEven && x % 2 === 0) {
+                continue;  
             }
-            else sum = sum + x;
-        }
-        else sum = sum + x;        
-    }
- 
+            sum += x;
+        }      
 } else 
-    for (x = m; x <= n; x++) {
-        if (skipEven) {
-            if (x % 2 === 0) {
-                sum = sum;  
-            }
-            else sum = sum + x;
+    for (x = secondInt; x <= firstInt; x++) {
+        if (skipEven && x % 2 === 0) {
+            continue;  
         }
-        else sum = sum + x;        
-    }
+        sum += x;
+    }        
 
 const results = `
-<p>The first number is <span>${n}</span></p>
-<p>The second number is <span>${m}</span></p>
+<p>The first number is <span>${firstInt}</span></p>
+<p>The second number is <span>${secondInt}</span></p>
 <p>Skip even is <span>${skipEven}</span></p>
 <p>Sum of numbers between the first and the second number is <span>${sum}</span></p>`;
 

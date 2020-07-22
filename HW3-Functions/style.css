@@ -1,0 +1,34 @@
+body {
+    background-color: #000000;
+    font-family: 'Baloo Da 2', cursive;
+    font-weight: 600;
+}
+
+.wrapper {
+    width: 1000px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    background-color: rgb(238, 151, 151);
+    margin: 50px auto;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 10px 10px 5px 6px rgba(200, 200, 206, 0.43);
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Grenze Gotisch', cursive;
+    font-weight: 800;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    color: #7de73f;
+    font-weight: 800;
+    font-size: 25px;
+}
