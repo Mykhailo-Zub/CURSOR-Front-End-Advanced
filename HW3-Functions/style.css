@@ -10,8 +10,8 @@ body {
     flex-direction: column; 
     align-items: center;
     background-color: rgb(238, 151, 151);
-    margin: 50px auto;
-    padding: 50px;
+    margin: 10px auto;
+    padding: 20px;
     border-radius: 18px;
     box-shadow: 10px 10px 5px 6px rgba(200, 200, 206, 0.43);
 }
@@ -23,12 +23,22 @@ h1 {
     margin-top: 0;
 }
 
-p {
+button {
+    width: 400px;
+    height: 60px;
     font-size: 20px;
+    border-radius: 8px;
+    background-color: #e7eb20;
+    outline: none;
 }
 
-span {
-    color: #7de73f;
-    font-weight: 800;
-    font-size: 25px;
+button:hover {
+    transform: scale(1.1);
 }
+
+button:active {
+    transform: scale(1);
+    outline: none;
+}
+
+button:

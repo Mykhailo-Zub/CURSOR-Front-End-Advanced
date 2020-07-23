@@ -8,4 +8,3 @@ function afterTaxes() {
     alert(`Your salary after taxes is ${salaryAfterTaxes}`)
     return salaryAfterTaxes;
 }
-afterTaxes();

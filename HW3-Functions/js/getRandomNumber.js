@@ -1,23 +1,22 @@
 function getRandomNumber() {
-    let a = +prompt('Function 5 - "Get random number". Enter the first number:');
-    while (!+a) {
-        a = +prompt('Function 5 - "Get random number". Enter the first NUMBER:');
+    let firstNumber = +prompt('Function 5 - "Get random number". Enter the first number:');
+    while (!+firstNumber) {
+        firstNumber = +prompt('Function 5 - "Get random number". Enter the first NUMBER:');
     }
-    let b = +prompt('Function 5 - "Get random number". Enter the second number:');
-    while (!+b) {
-        b = +prompt('Function 5 - "Get random number". Enter the second NUMBER:');
+    let secondNumber = +prompt('Function 5 - "Get random number". Enter the second number:');
+    while (!+secondNumber) {
+        secondNumber = +prompt('Function 5 - "Get random number". Enter the second NUMBER:');
     }
-    let c = Math.random();
-    console.log(c);
+    let random = Math.random();
     let result = 0;
-    if (a === b) {
-        result = a; 
-    } else if (a < b) {
-        result = Math.round((b - a) * c) + a; 
+    if (firstNumber === secondNumber) {
+        result = firstNumber; 
+    } else if (firstNumber < secondNumber) {
+        result = Math.round((secondNumber - firstNumber) * random) + firstNumber; 
     } else {
-        result = Math.round((a - b) * c) + b;
+        result = Math.round((firstNumber - secondNumber) * random) + secondNumber;
     }
-    console.log(result);
+    alert(`The random number from ${firstNumber} to ${secondNumber} is ${result}`)
+    return result;
 }
 
-getRandomNumber();
