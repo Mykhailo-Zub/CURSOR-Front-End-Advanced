@@ -1,11 +1,11 @@
 function getRandomNumber() {
-    let firstNumber = +prompt('Function 5 - "Get random number". Enter the first number:');
-    while (!+firstNumber) {
-        firstNumber = +prompt('Function 5 - "Get random number". Enter the first NUMBER:');
+    let firstNumber = parseInt(prompt('Function 5 - "Get random number". Enter the first number:'));
+    while (isNaN(firstNumber)) {
+        firstNumber = parseInt(prompt('Function 5 - "Get random number". Enter the first NUMBER:'));
     }
-    let secondNumber = +prompt('Function 5 - "Get random number". Enter the second number:');
-    while (!+secondNumber) {
-        secondNumber = +prompt('Function 5 - "Get random number". Enter the second NUMBER:');
+    let secondNumber = parseInt(prompt('Function 5 - "Get random number". Enter the second number:'));
+    while (isNaN(secondNumber)) {
+        secondNumber = parseInt(prompt('Function 5 - "Get random number". Enter the second NUMBER:'));
     }
     let random = Math.random();
     let result = 0;

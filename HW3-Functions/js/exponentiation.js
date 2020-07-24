@@ -1,10 +1,10 @@
 function exponentiation() {
     let number = prompt('Function 2 - "Exponentiation". Enter the number:');
-    while (!+number) {
+    while (isNaN(number)) {
         number = prompt('Function 2 - "Exponentiation". Enter the NUMBER:');
     }
     let degree = prompt('Function 2 - "Exponentiation". Enter degree:');
-    while (!+degree) {
+    while (isNaN(degree)) {
         degree = prompt('Function 2 - "Exponentiation". Enter DEGREE:');
     }
     let result = 1;

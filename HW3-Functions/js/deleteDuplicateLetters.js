@@ -1,6 +1,6 @@
 function deleteDuplicateLetters() {
     let sentence = prompt('Function 11 - "Delete duplicate letters". Enter any sentence (word):');
-   while (+sentence) {
+   while (!isNaN(sentence)) {
     sentence = prompt('Function 11 - "Delete duplicate letters". Enter any SENTENCE (WORD):');
    }
    let lowSentence = sentence.toLowerCase();

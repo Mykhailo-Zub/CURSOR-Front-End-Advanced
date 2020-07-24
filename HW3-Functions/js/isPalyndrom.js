@@ -1,6 +1,6 @@
 function isPalyndrom() {
     let word = prompt('Function 10 - "Is your word palyndrom". Enter any word:');
-   while (+word) {
+   while (!isNaN(word)) {
     word = prompt('Function 10 - "Is your word palyndrom". Enter any WORD:');
    }
    let lowWord = word.toLowerCase();

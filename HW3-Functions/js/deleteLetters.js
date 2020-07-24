@@ -1,10 +1,10 @@
 function deleteLetters() {
     let word = prompt('Function 9 - "Delete letters". Enter any word:');
-   while (+word) {
+   while (!isNaN(word)) {
     word = prompt('Function 9 - "Delete letters". Enter any WORD:');
    }
    let letter = prompt('Function 9 - "Delete letters". What letter do you want to delete?');
-   while (+letter || letter.length > 1) {
+   while (!isNaN(letter) || letter.length > 1) {
     letter = prompt('Function 9 - "Delete letters". What ONE LETTER do you want to delete?');
    }
    word = word.toLowerCase();

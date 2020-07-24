@@ -1,6 +1,6 @@
 function afterTaxes() {
     let salary = prompt('Function 4 - "Salary after taxes". Enter your salary:');
-    while (!+salary) {
+    while (isNaN(salary)) {
         salary = prompt('Function 4 - "Salary after taxes". Enter your SALARY:');
     }
     const taxes = 0.195;

@@ -6,8 +6,8 @@ function getRandomPassword() {
             let random = Math.floor(Math.random() * 10);
             randomPass += random.toString();
         } 
-    } else {while (!+passLength) {
-        passLength = +prompt('Function 8 - "Get random password". Enter the LENGTH of password:');
+    } else {while (isNaN(passLength)) {
+        passLength = parseInt(prompt('Function 8 - "Get random password". Enter the LENGTH of password:'));
     }   for (let i = 0; i < +passLength; i++) {
             let random = Math.floor(Math.random() * 10);
             randomPass += random.toString();

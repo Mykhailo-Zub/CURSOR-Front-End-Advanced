@@ -1,6 +1,6 @@
 function nameFormat() {
    let name = prompt('Function 3 - "Name format". Enter your name:');
-   while (+name) {
+   while (!isNaN(name)) {
       name = prompt('Function 3 - "Name format". Enter your NAME:');
    }
    const nameSmall = name.toLowerCase();

@@ -1,6 +1,6 @@
 function getMaxDigit() {
     let anyInt = prompt('Function 1 - "Get max digit". Enter an integer:');
-    while (!+anyInt) {
+    while (isNaN(anyInt)) {
         anyInt = prompt('Function 1 - "Get max digit". Enter an INTEGER:');
     }
     let anyString = String(anyInt);

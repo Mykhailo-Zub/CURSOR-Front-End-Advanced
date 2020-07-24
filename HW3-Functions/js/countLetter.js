@@ -1,10 +1,10 @@
 function countLetter() {
     let word = prompt('Function 6 - "Letter count". Enter any word:');
-   while (+word) {
+   while (!isNaN(word)) {
     word = prompt('Function 6 - "Letter count". Enter any WORD:');
    }
    let letter = prompt('Function 6 - "Letter count". What letter do you want to count?');
-   while (+letter || letter.length > 1) {
+   while (!isNaN(letter) || letter.length > 1) {
     letter = prompt('Function 6 - "Letter count". What ONE LETTER do you want to count?');
    }
    word = word.toLowerCase();
