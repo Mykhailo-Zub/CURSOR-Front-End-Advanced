@@ -11,11 +11,9 @@ function getRandomNumber() {
     let result = 0;
     if (firstNumber === secondNumber) {
         result = firstNumber; 
-    } else if (firstNumber < secondNumber) {
-        result = Math.round((secondNumber - firstNumber) * random) + firstNumber; 
-    } else {
-        result = Math.round((firstNumber - secondNumber) * random) + secondNumber;
-    }
+        result = firstNumber < secondNumber
+        ? Math.round((secondNumber - firstNumber) * random) + firstNumber
+        : Math.round((firstNumber - secondNumber) * random) + secondNumber;
     alert(`The random number from ${firstNumber} to ${secondNumber} is ${result}`)
     return result;
 }
