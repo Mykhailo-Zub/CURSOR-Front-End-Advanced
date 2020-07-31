@@ -24,11 +24,13 @@ const modaCount = (arr) => {
         if (newArr[i - 1] === undefined) {
         } else if (newArr[i] === newArr[i - 1]) {
             numbers.push(newArr[i]);
+        } else {
+            answer = [`This row of numbers is multimodal`];
         }}}
     while (numbers.length > 2);
     if (numbers.length === 1) {
         answer = [...numbers];
-    } else if (numbers[0] === numbers[1]) {
+    } else if (numbers[0] === numbers[1] && numbers[0] !== undefined) {
         answer = [numbers[0]]
     } else {
         answer = [`This row of numbers is multimodal`];
@@ -113,6 +115,9 @@ console.log(replaceBadWords("It's bullshit!"));
 
 const divideByThree = (word) => {
     word = word.toLowerCase();
+    while (word.includes(' ')) {
+        word = word.replace(' ', '');
+    }
     const syllables = [];
     console.log(word);
     for (let i = 0, j = 0; i < (word.length / 3); i++) {
