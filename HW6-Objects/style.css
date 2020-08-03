@@ -1,0 +1,88 @@
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes load1 {
+    0% {
+        opacity: 1;
+        color: green;
+    }
+
+    10% {
+        opacity: 0.5;
+        color: green;
+    }
+    20% {
+        opacity: 0;
+        color: #f5e82f;
+    }
+    30% {
+        opacity: 0.5;
+        color: #f5e82f;
+    }
+    40% {
+        opacity: 1;
+        color: #3674fa;
+    }
+    50% {
+        opacity: 0.5;
+        color: #3674fa;
+    }
+    60% {
+        opacity: 1;
+        color: #ec594b;
+    }
+    70% {
+        opacity: 0.5;
+        color: #ec594b;
+    }
+    80% {
+        opacity: 1;
+        color: #fc18dd;
+    }
+    90% {
+        opacity: 0.5;
+        color: #fc18dd;
+    }
+    100% {
+        color: green;
+        opacity: 1;
+    }
+}
+
+div {
+    margin-top: 30px;
+    text-align: center;
+    color: mediumorchid;
+    font-size: 25px;
+    animation: load;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+span {
+    font-size: 40px;
+    animation: load1;
+    animation-duration: 5s;
+    opacity: 0.5;
+    animation-iteration-count: infinite;
+}
+
+h1 {
+    font-size: 35px;
+    text-align: center;
+    color: indigo;
+}
+
+.red {
+    font-size: 30px;
+    animation: none;
+    color: red;
+}
