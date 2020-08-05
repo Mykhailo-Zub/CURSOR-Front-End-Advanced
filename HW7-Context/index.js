@@ -47,6 +47,6 @@ const results = `
     <p>Function 1 - Get my taxes: ${getTaxes.call(ukraine, 1000)}</p>
     <p>Function 2 - Get middle taxes: ${getMiddleTaxes.call(latvia)}</p>
     <p>Function 3 - Get total taxes: ${getTotalTaxes.call(litva)}</p>
-    <p>Function 4 - Get my taxes: <span>Ansver in console</span></p>`;
+    <p>Function 4 - Get my salary: <span>Ansver in console</span></p>`;
 
 document.querySelector('.results').innerHTML = results;
