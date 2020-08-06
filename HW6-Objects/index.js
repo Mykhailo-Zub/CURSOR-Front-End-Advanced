@@ -38,68 +38,37 @@ let currentStudent = getCurrentStudent();
 
 const getSubjects = (arr, studentIndex) => {
     let subjects = Object.keys(arr[studentIndex].subjects);
-    let correctSubjects = [];
-    let i = 0;
-    subjects.map((subject) => {
-        subject = subject[0].toUpperCase() + subject.slice(1);
-        subject = subject.replace('_', ' ');
-        correctSubjects[i] = subject;
-        i++;
-    }); 
-    return correctSubjects;
+    return subjects.map((subject) => subject[0].toUpperCase() + subject.slice(1).toLowerCase().replace('_', ' ')); 
 }
-
 
 // 2
 
-const getAverage = (numbers) => {
-    numbers = numbers.filter((item) => (item ^ 0) === item);
-    const answer = numbers.reduce((acc, number) => acc + parseInt(number)) / numbers.length;
-    return answer;
-}
-
 const getAverageMark = (arr, studentIndex) => {
-    let marks = Object.values(arr[studentIndex].subjects);
-    let allMarks = [...marks[0], ...marks[1], ...marks[2]];
-    let averageMark = Math.round(getAverage(allMarks) * 100) / 100;
-    return averageMark;
+    const allMarks = Object.values(arr[studentIndex].subjects).flat();
+    const answer = Math.round((allMarks.reduce((acc, number) => acc + parseInt(number), 0) / allMarks.length) * 100) / 100;
+    return answer;
 }
 
 
 // 3
 
 const getStudentInfo = (arr, studentIndex) => {
-    const studentInfo = {};
-    studentInfo.course = arr[studentIndex].course;
-    studentInfo.name = arr[studentIndex].name;
-    studentInfo.averageMark = getAverageMark(arr, studentIndex);
-    return studentInfo;
+    const {course, name} = arr[studentIndex];
+    return {course, name, averageMark: getAverageMark(arr, studentIndex)};
 }
 
 console.log(getStudentInfo(students, currentStudent));
 
 // 4
 
-const getStudentsName = (arr) => {
-    let studentsName = [];
-    studentsName = [arr[0].name, arr[1].name, arr[2].name];
-    studentsName = studentsName.sort();
-    return studentsName;
-}
-
+const getStudentsName = (arr) => arr.map((item) => item.name).sort();
 
 // 5
 
 const getBestStudent = (arr) => {
-    let bestStudent = [];
-    if (getAverageMark(students, 0) > getAverageMark(students, 1)) {
-        if (getAverageMark(students, 0) > getAverageMark(students, 2)){
-            bestStudent = arr[0].name;
-        } else {bestStudent = arr[2].name};
-    } else if (getAverageMark(students, 1) > getAverageMark(students, 2)) {
-        bestStudent = arr[1].name;
-    } else {bestStudent = arr[2].name};
-    return bestStudent;
+    const maxMark = Math.max(...arr.map((item, i) => getAverageMark(arr, i)));
+    const bestStudent = arr.find((item, i) => getAverageMark(arr, i) === maxMark)
+    return bestStudent.name;
 }
 
 
