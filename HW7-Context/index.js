@@ -28,20 +28,17 @@ console.log(getTotalTaxes.call(litva));
 
 // 4
 
-function getMySalary() {
-    const answer = {};
-    const min = 1500;
-    const max = 2000;
-    const salary = Math.round((max - min) * Math.random() + min);
-    const taxes = salary * this.tax;
-    const profit = salary - taxes;
-    answer.salary = salary;
-    answer.taxes = taxes;
-    answer.profit = profit; 
-    return answer;
+function getMySalary(min, max) {
+    return {
+        salary: Math.round((max - min) * Math.random() + min),
+        taxes: Math.round((max - min) * Math.random() + min) * this.tax,
+        profit:
+            Math.round((max - min) * Math.random() + min) -
+            Math.round((max - min) * Math.random() + min) * this.tax,
+    };
 }
 
-setInterval(() => console.log(getMySalary.call(ukraine)), 10000);
+setInterval(() => console.log(getMySalary.call(ukraine, 1500, 2000)), 10000);
 
 const results = `
     <p>Function 1 - Get my taxes: ${getTaxes.call(ukraine, 1000)}</p>
@@ -49,4 +46,4 @@ const results = `
     <p>Function 3 - Get total taxes: ${getTotalTaxes.call(litva)}</p>
     <p>Function 4 - Get my salary: <span>Ansver in console</span></p>`;
 
-document.querySelector('.results').innerHTML = results;
+document.querySelector(".results").innerHTML = results;
