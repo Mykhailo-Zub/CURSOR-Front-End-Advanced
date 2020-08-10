@@ -50,6 +50,6 @@ const results = `
     <p>Student info: ${ostapBender.getInfo()} </p>
     <p>Student's marks: ${ostapBender.mark} </p>
     <p>Student's average mark: ${ostapBender.getAverageMark()}</p>
-    <p><span>Other ansvers in console</span></p>`;
+    <p><span>Other answers in console</span></p>`;
 
 document.querySelector(".results").innerHTML = results;
