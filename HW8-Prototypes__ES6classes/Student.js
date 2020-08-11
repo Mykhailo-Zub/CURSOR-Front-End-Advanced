@@ -19,10 +19,7 @@ class Student {
     }
 
     get mark() {
-        if (this.expelled) {
-            return null;
-        }
-        return this.marks;
+        return this.expelled ? null : this.marks;
     }
 
     set mark(mark) {
