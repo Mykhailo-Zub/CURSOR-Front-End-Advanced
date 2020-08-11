@@ -15,13 +15,9 @@ const changeColor = () => {
 const start = () => {
     changeColor();
     showBlocks();
-    if (
-        document.querySelector(".blocks-wrapper").classList.contains("hidden")
-    ) {
-        document.getElementById("start-btn").innerHTML = "Show blocks";
-    } else {
-        document.getElementById("start-btn").innerHTML = "Hide blocks";
-    }
+    document.querySelector(".blocks-wrapper").classList.contains("hidden")
+        ? (document.getElementById("start-btn").innerHTML = "Show blocks")
+        : (document.getElementById("start-btn").innerHTML = "Hide blocks");
 };
 
 let interval;
