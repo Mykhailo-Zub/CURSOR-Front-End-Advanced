@@ -7,15 +7,15 @@ const hBtn = document.getElementById("H");
 const jBtn = document.getElementById("J");
 const kBtn = document.getElementById("K");
 const lBtn = document.getElementById("L");
-const sound65 = new Audio("./sounds/1(1).mp3");
-const sound83 = new Audio("./sounds/1(2).mp3");
-const sound68 = new Audio("./sounds/1(3).mp3");
-const sound70 = new Audio("./sounds/1(4).wav");
-const sound71 = new Audio("./sounds/1(5).wav");
-const sound72 = new Audio("./sounds/1(6).mp3");
-const sound74 = new Audio("./sounds/1(7).mp3");
-const sound75 = new Audio("./sounds/1(8).mp3");
-const sound76 = new Audio("./sounds/1(9).mp3");
+const sound65 = new Audio("sounds/1(1).mp3");
+const sound83 = new Audio("sounds/1(2).mp3");
+const sound68 = new Audio("sounds/1(3).mp3");
+const sound70 = new Audio("sounds/1(4).wav");
+const sound71 = new Audio("sounds/1(5).wav");
+const sound72 = new Audio("sounds/1(6).mp3");
+const sound74 = new Audio("sounds/1(7).mp3");
+const sound75 = new Audio("sounds/1(8).mp3");
+const sound76 = new Audio("sounds/1(9).mp3");
 
 function addWhite(btn) {
     btn.classList.add("white-pressed");
