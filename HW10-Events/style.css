@@ -1,0 +1,85 @@
+body {
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.white-btn-wrapper {
+    margin: 350px 0;
+    display: flex;
+    background-color: black;
+    width: 410px;
+    height: 182px;
+    overflow: hidden;
+}
+
+.white-btn {
+    margin: 1px;
+    position: relative;
+    border-top: 2000px solid white;
+    border-left: 40px solid white;
+    border-right: 40px solid white;
+}
+
+.white-btn:active {
+    border-top: 2000px solid white;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+}
+
+.white-pressed {
+    border-top: 2000px solid white;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+}
+
+.white-btn span {
+    font-size: 35px;
+    position: absolute;
+    top: -1870px;
+    left: -10px;
+}
+
+.black-btn-wrapper {
+    position: absolute;
+    display: flex;
+    top: 350px;
+    pointer-events: none;
+    width: 320px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.black-btn {
+    margin: 0 10px;
+    position: relative;
+    border-top: 1500px solid black;
+    border-left: 30px solid black;
+    border-right: 30px solid black;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+
+.black-btn:active {
+    border-top: 1500px solid black;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+.black-pressed {
+    border-top: 1500px solid black;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+.black-btn span {
+    font-size: 30px;
+    position: absolute;
+    color: white;
+    top: -1450px;
+    left: -8px;
+}
