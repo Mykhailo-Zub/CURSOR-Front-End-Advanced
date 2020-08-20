@@ -1,22 +1,3 @@
-const aBtn = document.getElementById("A");
-const sBtn = document.getElementById("S");
-const dBtn = document.getElementById("D");
-const fBtn = document.getElementById("F");
-const gBtn = document.getElementById("G");
-const hBtn = document.getElementById("H");
-const jBtn = document.getElementById("J");
-const kBtn = document.getElementById("K");
-const lBtn = document.getElementById("L");
-const sound65 = new Audio("sound/1(1).mp3");
-const sound83 = new Audio("sound/1(2).mp3");
-const sound68 = new Audio("sound/1(3).mp3");
-const sound70 = new Audio("sound/1(4).wav");
-const sound71 = new Audio("sound/1(5).wav");
-const sound72 = new Audio("sound/1(6).mp3");
-const sound74 = new Audio("sound/1(7).mp3");
-const sound75 = new Audio("sound/1(8).mp3");
-const sound76 = new Audio("sound/1(9).mp3");
-
 function addWhite(btn) {
     btn.classList.add("white-pressed");
     setTimeout(() => btn.classList.remove("white-pressed"), 300);
@@ -27,83 +8,71 @@ function addBlack(btn) {
     setTimeout(() => btn.classList.remove("black-pressed"), 300);
 }
 
-aBtn.addEventListener("click", function (event) {
-    playSound(sound65);
+function playSound(sound) {
+    sound.play();
+}
+
+const whiteButtonsForMouse = document.querySelectorAll(".white-btn");
+const blackButtonsForMouse = document.querySelectorAll(".black-btn");
+
+whiteButtonsForMouse.forEach((elem, index) => {
+    elem.addEventListener("click", () => {
+        addWhite(elem);
+        playSound(new Audio(`sound/1(${index}).mp3`));
+    });
 });
 
-sBtn.addEventListener("click", function (event) {
-    playSound(sound83);
+blackButtonsForMouse.forEach((elem, index) => {
+    elem.addEventListener("click", () => {
+        addBlack(elem);
+        playSound(new Audio(`sound/1(${index + 5}).mp3`));
+    });
 });
 
-dBtn.addEventListener("click", function (event) {
-    playSound(sound68);
+const whiteButtonsForKeyboard = whiteButtonsForMouse.forEach((elem, index) => {
+    elem.classList.add(`white${index}`);
 });
-
-fBtn.addEventListener("click", function (event) {
-    playSound(sound70);
-});
-
-gBtn.addEventListener("click", function (event) {
-    playSound(sound71);
-});
-
-hBtn.addEventListener("click", function (event) {
-    playSound(sound72);
-});
-
-jBtn.addEventListener("click", function (event) {
-    playSound(sound74);
-});
-
-kBtn.addEventListener("click", function (event) {
-    playSound(sound75);
-});
-
-lBtn.addEventListener("click", function (event) {
-    playSound(sound76);
+const blackButtonsForKeyboard = blackButtonsForMouse.forEach((elem, index) => {
+    elem.classList.add(`black${index}`);
 });
 
 document.body.addEventListener("keydown", function (event) {
     switch (event.keyCode) {
         case 65:
-            addWhite(aBtn);
-            playSound(sound65);
+            addWhite(document.querySelector(".white0"));
+            playSound(new Audio(`sound/1(0).mp3`));
             break;
         case 83:
-            addBlack(sBtn);
-            playSound(sound83);
+            addBlack(document.querySelector(".black0"));
+            playSound(new Audio(`sound/1(5).mp3`));
             break;
         case 68:
-            addWhite(dBtn);
-            playSound(sound68);
+            addWhite(document.querySelector(".white1"));
+            playSound(new Audio(`sound/1(1).mp3`));
             break;
         case 70:
-            addBlack(fBtn);
-            playSound(sound70);
+            addBlack(document.querySelector(".black1"));
+            playSound(new Audio(`sound/1(6).mp3`));
             break;
         case 71:
-            addWhite(gBtn);
-            playSound(sound71);
+            addWhite(document.querySelector(".white2"));
+            playSound(new Audio(`sound/1(2).mp3`));
             break;
         case 72:
-            addBlack(hBtn);
-            playSound(sound72);
+            addBlack(document.querySelector(".black2"));
+            playSound(new Audio(`sound/1(7).mp3`));
             break;
         case 74:
-            addWhite(jBtn);
-            playSound(sound74);
+            addWhite(document.querySelector(".white3"));
+            playSound(new Audio(`sound/1(3).mp3`));
             break;
         case 75:
-            addBlack(kBtn);
-            playSound(sound75);
+            addBlack(document.querySelector(".black3"));
+            playSound(new Audio(`sound/1(8).mp3`));
             break;
         case 76:
-            addWhite(lBtn);
-            playSound(sound76);
+            addWhite(document.querySelector(".white4"));
+            playSound(new Audio(`sound/1(4).mp3`));
             break;
     }
 });
-
-function playSound(sound) {
-    sound.play();
-}
