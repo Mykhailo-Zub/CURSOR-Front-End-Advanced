@@ -17,7 +17,8 @@ function getCharacters() {
             format: language,
         },
     };
-    return axios(config)
+    return axios
+        .get(`https://swapi.dev/api/films/${id}/`)
         .then((res) => res.data.characters)
         .then((charLinks) => {
             return Promise.all(
