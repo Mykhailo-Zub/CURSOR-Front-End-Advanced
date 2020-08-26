@@ -23,7 +23,9 @@ function getCharacters() {
         .then((charLinks) => {
             return Promise.all(
                 charLinks.map((el) => {
-                    httpsFix(el);
+                    el[4].toLowerCase() === "s"
+                        ? el
+                        : `${el.slice(0, 4)}s${el.slice(4)}`;
                     return axios.get(el).then((res) => res.data);
                 })
             );
