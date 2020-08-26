@@ -10,22 +10,18 @@ function httpsFix(link) {
 
 function getCharacters() {
     const id = selectedEpisode();
-    const config = {
-        method: "GET",
-        url: BASE + "films/" + id,
-        params: {
-            format: language,
-        },
-    };
     return axios
         .get(`https://swapi.dev/api/films/${id}/`)
-        .then((res) => res.data.characters)
+        .then((res) => {
+            return res.data.characters;
+        })
         .then((charLinks) => {
+            const newLinks = [];
+            for (let i = 0; i < charLinks.length; i++) {
+                newLinks[i] = charLinks[i].replace("http://", "https://");
+            }
             return Promise.all(
-                charLinks.map((el) => {
-                    el[4].toLowerCase() === "s"
-                        ? el
-                        : `${el.slice(0, 4)}s${el.slice(4)}`;
+                newLinks.map((el) => {
                     return axios.get(el).then((res) => res.data);
                 })
             );
