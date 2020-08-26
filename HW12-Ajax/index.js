@@ -2,6 +2,12 @@ const BASE = "https://swapi.dev/api/";
 let language = null;
 const container = document.querySelector(".results");
 
+function httpsFix(link) {
+    link[4].toLowerCase() === "s"
+        ? link
+        : `${link.slice(0, 4)}s${link.slice(4)}`;
+}
+
 function getCharacters() {
     const id = selectedEpisode();
     const config = {
@@ -16,9 +22,7 @@ function getCharacters() {
         .then((charLinks) => {
             return Promise.all(
                 charLinks.map((el) => {
-                    el[4].toLowerCase() === "s"
-                        ? el
-                        : el.slice(0, 4) + "s" + el.slice(4);
+                    httpsFix(el);
                     return axios.get(el).then((res) => res.data);
                 })
             );
