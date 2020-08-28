@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(215, 243, 182);
+    color: rgb(119, 65, 65);
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+button {
+    width: 150px;
+    height: 35px;
+    margin: 0 10px;
+    background-color: rgb(121, 87, 185);
+    border: 2px solid rgb(22, 22, 253);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    outline: none;
+    transform: scale(1);
+}
+
+.results {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 50px;
+}
