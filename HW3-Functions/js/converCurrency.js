@@ -1,15 +1,25 @@
-function convertCurrency() {
-    let amount = prompt('Function 7 - "Currency Converter". Enter amount in format "amount$" or "amountUAH":');
-    while (!((amount.includes("$") && !isNaN(amount.slice(0, -1))) || ((amount.includes("UAH") || amount.includes("uah")) && !isNaN(amount.slice(0, -3))))) {
-        amount = prompt('Function 7 - "Currency Converter". Enter CORRECT amount in format "amount$" or "amountUAH":');
+export function convertCurrency() {
+    let amount = prompt(
+        'Function 7 - "Currency Converter". Enter amount in format "amount$" or "amountUAH":'
+    );
+    while (
+        !(
+            (amount.includes("$") && !isNaN(amount.slice(0, -1))) ||
+            ((amount.includes("UAH") || amount.includes("uah")) &&
+                !isNaN(amount.slice(0, -3)))
+        )
+    ) {
+        amount = prompt(
+            'Function 7 - "Currency Converter". Enter CORRECT amount in format "amount$" or "amountUAH":'
+        );
     }
     let result;
     let exchangeRates = 25;
     if (amount.includes("$") && !isNaN(amount.slice(0, -1))) {
         result = +amount.slice(0, -1) * exchangeRates;
-        alert(`Your ${amount} equals ${result}UAH`)
+        alert(`Your ${amount} equals ${result}UAH`);
     } else {
         result = +amount.slice(0, -3) / exchangeRates;
-        alert(`Your ${amount} equals ${result}$`)
+        alert(`Your ${amount} equals ${result}$`);
     }
 }
