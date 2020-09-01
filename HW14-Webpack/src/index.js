@@ -7,12 +7,13 @@ import { Student } from "../../HW8-Prototypes__ES6classes/Student";
 import { getRandom } from "../../HW9-DOM/colorChanger";
 import { getRandomChar } from "../../HW11-Promises/getRandomChar";
 import { getCharacters } from "../../HW12-Ajax/getCharacters";
-import { idGenerator } from "../../HW13-Generators/idGenerator";
-import "../style.css";
+import "./style.css";
 import background from "../../HW12-Ajax/img/wrapper.jpg";
 
+//HW3
+convertCurrency();
+
 //HW4
-// convertCurrency();
 getPairsExport();
 
 //HW5
@@ -42,8 +43,5 @@ console.log(getRandomChar());
 
 //HW12
 getCharacters().then((res) => console.log(res));
-
-//HW13
-console.log(idGenerator.next().value);
 
 document.body.style.backgroundImage = `url('../HW14-Webpack/dist/${background}')`;
