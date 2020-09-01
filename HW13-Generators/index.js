@@ -1,5 +1,8 @@
+let fontSize = 14;
+const font = document.querySelector(".font-for-change");
+
 function* createIdGenerator() {
-    for (let i = 1; i >= 0; i++) yield i;
+    for (let i = 1; ; i++) yield i;
 }
 
 const idGenerator = createIdGenerator();
@@ -10,8 +13,6 @@ document.getElementById("id-gen").addEventListener("click", () => {
     newId.innerHTML = ` ${idGenerator.next().value};`;
     container.append(newId);
 });
-
-let fontSize = 14;
 
 function* createFontGenerator(defaultSize) {
     fontSize = defaultSize;
@@ -33,8 +34,6 @@ function* createFontGenerator(defaultSize) {
 }
 
 const fontGenerator = createFontGenerator(14);
-
-const font = document.querySelector(".font-for-change");
 
 document.getElementById("default").addEventListener("click", () => {
     fontSize = 14;
