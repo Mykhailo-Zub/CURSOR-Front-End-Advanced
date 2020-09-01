@@ -32,12 +32,28 @@ button {
 
 button:hover,
 #episode:hover {
-    box-shadow: 10px 10px 59px 30px rgba(242, 144, 25, 0.9);
+    animation: blinker 1.5s both infinite;
 }
 
 button:active,
 #episode:active {
     outline: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+@keyframes blinker {
+    0% {
+        box-shadow: 10px 10px 59px 10px rgba(242, 144, 25, 0.7);
+    }
+    50% {
+        box-shadow: 10px 10px 59px 30px rgb(255, 255, 0);
+    }
+    100% {
+        box-shadow: 10px 10px 59px 10px rgba(242, 144, 25, 0.7);
+    }
 }
 
 #episode {

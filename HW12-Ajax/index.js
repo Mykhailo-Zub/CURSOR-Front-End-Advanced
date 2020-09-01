@@ -1,17 +1,12 @@
-const BASE = "https://swapi.dev/api/";
+const BASE_URL = "https://swapi.dev/api/";
 let language = null;
 const container = document.querySelector(".results");
-
-function httpsFix(link) {
-    link[4].toLowerCase() === "s"
-        ? link
-        : `${link.slice(0, 4)}s${link.slice(4)}`;
-}
+const episodeInput = document.getElementById("episode");
 
 function getCharacters() {
-    const id = selectedEpisode();
+    const id = selectedEpisode(episodeInput);
     return axios
-        .get(`https://swapi.dev/api/films/${id}/`)
+        .get(`${BASE_URL}films/${id}/`)
         .then((res) => {
             return res.data.characters;
         })
@@ -31,18 +26,22 @@ function getCharacters() {
         });
 }
 
+function addGenderImg(character) {
+    if (character.gender === "male") {
+        character.gender = '<img class="gender" src="./img/male.png">';
+    } else if (character.gender === "female") {
+        character.gender = '<img class="gender" src="./img/female.png">';
+    } else if (character.gender === "hermaphrodite") {
+        character.gender = '<img class="gender" src="./img/herm.png">';
+    } else if (character.gender === "n/a" || character.gender === "none") {
+        character.gender = '<img class="gender" src="./img/na.png">';
+    }
+}
+
 function showCharacters(characters) {
     container.innerHTML = "";
     characters.map((el) => {
-        if (el.gender === "male") {
-            el.gender = '<img class="gender" src="./img/male.png">';
-        } else if (el.gender === "female") {
-            el.gender = '<img class="gender" src="./img/female.png">';
-        } else if (el.gender === "hermaphrodite") {
-            el.gender = '<img class="gender" src="./img/herm.png">';
-        } else if (el.gender === "n/a" || el.gender === "none") {
-            el.gender = '<img class="gender" src="./img/na.png">';
-        }
+        addGenderImg(el);
         const charElement = document.createElement("div");
         charElement.className = "char";
         charElement.innerHTML = `
@@ -53,8 +52,8 @@ function showCharacters(characters) {
     });
 }
 
-function selectedEpisode() {
-    return document.getElementById("episode").value;
+function selectedEpisode(selector) {
+    return selector.value;
 }
 
 document.getElementById("char-btn").addEventListener("click", () => {
@@ -65,14 +64,9 @@ document.getElementById("char-btn").addEventListener("click", () => {
 let page = 1;
 
 function getPlanets(page) {
-    const config = {
-        method: "GET",
-        url: BASE + "planets/",
-        params: {
-            page,
-        },
-    };
-    return axios(config).then((res) => res.data.results);
+    return axios
+        .get(`${BASE_URL}planets/?page=${page}`)
+        .then((res) => res.data.results);
 }
 
 function showPlanet(planets) {
@@ -101,15 +95,3 @@ document.getElementById("next-btn").addEventListener("click", () => {
     if (page >= 6) return;
     getPlanets(++page).then(showPlanet);
 });
-
-// document.getElementById("lang-change").addEventListener("click", () => {
-//     if (language) {
-//         language = null;
-//         console.log(language);
-//         // alert("Please reload page");
-//     } else {
-//         language = "wookiee";
-//         console.log(language);
-//         // alert("Please reload page");
-//     }
-// });
