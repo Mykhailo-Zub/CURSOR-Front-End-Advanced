@@ -1,0 +1,18 @@
+.post-wrapper {
+    background-color: #000000;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.name-row {
+    color: #ffffff;
+    margin-left: 10px;
+    display: flex;
+}
