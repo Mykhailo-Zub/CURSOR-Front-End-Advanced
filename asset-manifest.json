@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/css/main.0b3dab1c.chunk.css",
+    "main.js": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/main.f4a188d3.chunk.js",
+    "main.js.map": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/main.f4a188d3.chunk.js.map",
+    "runtime-main.js": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/runtime-main.fa45cf0f.js",
+    "runtime-main.js.map": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/runtime-main.fa45cf0f.js.map",
+    "static/js/2.60e1fce5.chunk.js": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/2.60e1fce5.chunk.js",
+    "static/js/2.60e1fce5.chunk.js.map": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/2.60e1fce5.chunk.js.map",
+    "index.html": "/CURSOR-Front-End-Advanced/hw15-react.intro/index.html",
+    "precache-manifest.dc438ac5f6f7b58cc1990bf60973bbcb.js": "/CURSOR-Front-End-Advanced/hw15-react.intro/precache-manifest.dc438ac5f6f7b58cc1990bf60973bbcb.js",
+    "service-worker.js": "/CURSOR-Front-End-Advanced/hw15-react.intro/service-worker.js",
+    "static/css/main.0b3dab1c.chunk.css.map": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/css/main.0b3dab1c.chunk.css.map",
+    "static/js/2.60e1fce5.chunk.js.LICENSE.txt": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/js/2.60e1fce5.chunk.js.LICENSE.txt",
+    "static/media/comment.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/comment.0002e5f6.svg",
+    "static/media/confirm.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/confirm.39726703.svg",
+    "static/media/down-arrow.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/down-arrow.da333812.svg",
+    "static/media/like.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/like.12220a22.svg",
+    "static/media/share.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/share.444db246.svg",
+    "static/media/upload.svg": "/CURSOR-Front-End-Advanced/hw15-react.intro/static/media/upload.8f047106.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa45cf0f.js",
+    "static/js/2.60e1fce5.chunk.js",
+    "static/css/main.0b3dab1c.chunk.css",
+    "static/js/main.f4a188d3.chunk.js"
+  ]
+}
